@@ -6,7 +6,15 @@ const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const app = express();
 
-app.use(cors({ origin: true }));
+// app.use(cors({ origin: true }));
+app.use(
+  cors({
+    origin: "https://symphonious-vacherin-6464d9.netlify.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 app.use(express.json());
 app.get("/", (req, res) => {
   res.status(200).json({
