@@ -51,10 +51,10 @@ dotenv.config();
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const app = express();
-
+// Cors configuration
 app.use(
   cors({
-    origin: "https://symphonious-vacherin-6464d9.netlify.app",
+    origin: "https://amazonclonebyrebka.netlify.app",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
